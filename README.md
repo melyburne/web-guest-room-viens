@@ -1,6 +1,6 @@
 # gästezimmer-viens.de
 
-[![Build and Release](https://github.com/melyburne/web-guest-room-viens/actions/workflows/build-publish.yml/badge.svg)](https://github.com/melyburne/web-guest-room-viens/actions/workflows/build-publish.yml)
+[![Build and Release](https://github.com/melyburne/web-guest-room-viens/actions/workflows/build-release.yml/badge.svg)](https://github.com/melyburne/web-guest-room-viens/actions/workflows/build-release.yml)
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fg%C3%A4stezimmer-viens.de)](https://gästezimmer-viens.de)
 
 Source code for **[gästezimmer-viens.de](https://gästezimmer-viens.de)**.
