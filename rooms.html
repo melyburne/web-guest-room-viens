@@ -1,0 +1,522 @@
+<html>
+  <head>
+    <title>G&auml;stezimmer Viens Zimmer</title>
+    <meta
+      name="keywords"
+      content="Besigheim, G&auml;stezimmer, Ferienwohnung, Monzeurzimmer, Stuttgart, Ludwigsburg, Heilbronn, Unterkunft"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /*body*/
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+
+      .content {
+        margin-top: 130px;
+        padding-bottom: 20px;
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          margin-top: 100px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          padding: 20px 16px;
+        }
+      }
+
+      .wrapper {
+        position: relative;
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+      }
+
+      /*navbar*/
+
+      nav ul {
+        overflow: hidden;
+        background-color: #333;
+        padding: 40px 10px;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        list-style-type: none;
+        left: 0;
+        margin: 0;
+        transition: 0.4s;
+        z-index: 99;
+      }
+      @media only screen and (max-width: 600px) {
+        nav ul {
+          padding: 20px 10px;
+        }
+      }
+
+      nav ul a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 20px;
+        border-radius: 4px;
+        color: #f2f2f2;
+      }
+      @media screen and (max-width: 600px) {
+        nav a:not(:first-child) {
+          display: none;
+        }
+        nav ul a {
+          float: none;
+        }
+      }
+
+      nav ul a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      nav ul a.active {
+        background-color: #717171;
+        color: white;
+      }
+
+      .icon {
+        display: none;
+      }
+      @media screen and (max-width: 600px) {
+        .icon {
+          right: 10;
+          display: block;
+        }
+      }
+
+      .logo {
+        font-size: 35px;
+        transition: 0.4s;
+      }
+      @media only screen and (max-width: 600px) {
+        .logo {
+          font-size: 25px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .navbar.responsive {
+          position: relative;
+          padding: 20px 10px;
+        }
+        .navbar.responsive .icon {
+          position: absolute;
+          right: 10px;
+          top: 20px;
+        }
+        .navbar.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .content.responsive {
+          margin-top: 0px;
+        }
+      }
+
+      /*footer*/
+
+      .footer {
+        padding: 16px;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        list-style-type: none;
+        position: absolute;
+        bottom: 0px;
+      }
+
+      .footer li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /*button*/
+
+      .btn {
+        border: none;
+        padding: 14px 28px;
+        font-size: 16px;
+        display: inline-block;
+        background-color: #eee;
+      }
+      @media only screen and (max-width: 600px) {
+        .btn {
+          margin-top: 10px;
+        }
+      }
+
+      .btn:hover {
+        background: #ccc;
+      }
+
+      .btn.active {
+        background-color: #919191;
+        color: white;
+      }
+
+      /*Slideshow--*/
+
+      .simpleSlides {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+      }
+      @media only screen and (max-width: 600px) {
+        .btn {
+          width: 100%;
+        }
+      }
+
+      .slides {
+        display: none;
+        width: 100%;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 0;
+        width: auto;
+        height: 100%;
+        user-select: none;
+        padding: 16px;
+        border: none;
+        color: white;
+        background-color: inherit;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .prev {
+        left: 0px;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover {
+        background-image: linear-gradient(
+          to right,
+          white 0%,
+          rgba(0, 0, 0, 0) 75%
+        );
+        color: black;
+      }
+
+      .next:hover {
+        background-image: linear-gradient(
+          to left,
+          white 0%,
+          rgba(0, 0, 0, 0) 75%
+        );
+        color: black;
+      }
+
+      .animate-left {
+        position: relative;
+        animation: animateleft 0.8s;
+      }
+
+      @keyframes animateleft {
+        from {
+          left: -500px;
+          opacity: 0;
+        }
+        to {
+          left: 0;
+          opacity: 1;
+        }
+      }
+
+      /*box--*/
+
+      .box {
+        border: none;
+        padding: 14px 28px;
+        font-size: 16px;
+        display: inline-block;
+        background-color: inherit;
+      }
+
+      /*section*/
+
+      .section {
+        display: table;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .section {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .left {
+        width: 70%;
+        padding: 20px;
+        border-left: 4px solid grey;
+        vertical-align: top;
+        display: table-cell;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .left {
+          width: 100%;
+          display: inline-block;
+          border-left: none;
+          border-top: 4px solid grey;
+        }
+      }
+
+      .right {
+        width: 30%;
+        padding: 20px;
+        vertical-align: top;
+        display: table-cell;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .right {
+          width: 100%;
+          display: inline-block;
+          border: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--navbar-->
+
+    <nav>
+      <ul id="navbar" class="navbar">
+        <li>
+          <a href="#default" class="logo" id="logo">G&auml;stezimmer Viens</a>
+        </li>
+        <li><a href="./index.html" id="a">Startseite</a></li>
+        <li><a class="active" href="./rooms.html" id="a">Zimmer</a></li>
+        <li><a href="./prices.html" id="a">Preise</a></li>
+        <li><a href="./location.html" id="a">Lage</a></li>
+        <li><a href="./gallery.html" id="a">Galerie</a></li>
+        <li><a href="./contact.html" id="a">Kontakt</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()"
+            ><img src="./assets/img/icon-menu.png" alt="menu"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--Slideshow-->
+
+    <div class="wrapper">
+      <div class="content" id="content" align="middle">
+        <div class="section">
+          <div class="left">
+            <div class="simpleSlides" id="simpleSlides">
+              <img
+                class="slides animate-left"
+                src="./assets/img/double-bed-room-2.jpeg"
+              />
+              <img
+                class="slides animate-left"
+                src="./assets/img/two-single-bed-room-3.jpeg"
+              />
+              <img
+                class="slides animate-left"
+                src="./assets/img/three-single-bed-room.jpeg"
+              />
+
+              <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+              <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            </div>
+
+            <br />
+
+            <!--button-->
+
+            <div style="text-align: center">
+              <button class="btn" onclick="currentSlide(1)">
+                <h2>Doppelzimmer</h2>
+                <p>f&uuml;r max. 2 Personen mit einem Doppelbett</p>
+              </button>
+              <button class="btn" onclick="currentSlide(2)">
+                <h2>Doppelzimmer</h2>
+                <p>f&uuml;r max. 2 Personen mit 2 Einzelbetten</p>
+              </button>
+              <button class="btn" onclick="currentSlide(3)">
+                <h2>Mehrbettzimmer</h2>
+                <p>"f&uuml;r max. 3 Personen mit 3 Einzelbetten"</p>
+              </button>
+            </div>
+
+            <br />
+          </div>
+
+          <div class="left">
+            <!--Austattung-->
+
+            <div class="box" align="left">
+              <p>
+                Es handelt sich um 3 helle, neu renovierte Zimmer mit
+                Gemeinschaftsk&uuml;che f&uuml;r Selbstversorger und einem Bad
+                zur Gemeinschaftsnutzung.
+              </p>
+
+              <h2>Die Ausstattung</h2>
+
+              <ul>
+                <li>TV in jedem Zimmer</li>
+                <li>kostenloses WLAN</li>
+                <li>Gemeinschaftsbad mit Dusche, WC und Waschbecken</li>
+                <br clear="all" />
+                <li>Wohnk&uuml;che enth&auml;lt:</li>
+                <ul class="list">
+                  <li>Mikrowelle</li>
+                  <li>K&uuml;hlschrank</li>
+                  <li>Kaffeemaschine</li>
+                  <li>Wasserkocher</li>
+                  <li>Toaster</li>
+                  <li>E-Herd & Backofen</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!--footer-->
+
+      <div class="footer">
+        <ul>
+          <li><a href="./impress.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--navbar-->
+
+    <script>
+      const mq = window.matchMedia("(min-width: 600px)");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (mq.matches) {
+          if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+          ) {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.padding = "40px 10px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        } else {
+          document.getElementById("navbar").style.padding = "20px 10px";
+          document.getElementById("logo").style.fontSize = "25px";
+        }
+      }
+
+      if (matchMedia) {
+        const mq = window.matchMedia("(min-width: 600px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+      }
+    </script>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("navbar"),
+          v = document.getElementById("content");
+        if (x.className === "navbar") {
+          v.className += " responsive";
+          x.className += " responsive";
+        } else {
+          x.className = "navbar";
+          v.className = "content";
+        }
+      }
+    </script>
+
+    <!--Slideshow-->
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        var x = document.getElementById("simpleSlides");
+        showSlides((slideIndex += n));
+        if (x.className === "simpleSlides") {
+          x.className += " responsive";
+        }
+      }
+
+      function currentSlide(n) {
+        var x = document.getElementById("simpleSlides");
+        showSlides((slideIndex = n));
+        if (x.className === "simpleSlides") {
+          x.className += " responsive";
+        }
+      }
+
+      function showSlides(n) {
+        var x = document.getElementById("simpleSlides");
+        var btn = document.getElementsByClassName("btn");
+        var i;
+        var slides = document.getElementsByClassName("slides");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < btn.length; i++) {
+          btn[i].className = btn[i].className.replace(" active", "");
+        }
+        if (x.className === "simpleSlides") {
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+          btn[slideIndex - 1].className += " active";
+          slides[slideIndex - 1].style.display = "block";
+          setTimeout(showSlides, 2000);
+        } else {
+          slides[slideIndex - 1].style.display = "block";
+          btn[slideIndex - 1].className += " active";
+        }
+      }
+    </script>
+  </body>
+</html>

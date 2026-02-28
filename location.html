@@ -1,0 +1,451 @@
+<html>
+  <head>
+    <title>G&auml;stezimmer Viens Lage</title>
+    <meta
+      name="keywords"
+      content="Besigheim, G&auml;stezimmer, Ferienwohnung, Monzeurzimmer, Stuttgart, Ludwigsburg, Heilbronn, Unterkunft"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /*body*/
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+
+      .content {
+        margin-top: 130px;
+        padding-bottom: 20px;
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          margin-top: 100px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          padding: 20px 16px;
+        }
+      }
+
+      .wrapper {
+        position: relative;
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+      }
+
+      /*navbar*/
+
+      nav ul {
+        overflow: hidden;
+        background-color: #333;
+        padding: 40px 10px;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        list-style-type: none;
+        left: 0;
+        margin: 0;
+        transition: 0.4s;
+        z-index: 99;
+      }
+      @media screen and (max-width: 600px) {
+        nav ul {
+          padding: 20px 10px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        nav ul {
+          padding: 20px 10px;
+        }
+      }
+
+      nav ul a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 20px;
+        border-radius: 4px;
+        color: #f2f2f2;
+      }
+      @media screen and (max-width: 600px) {
+        nav a:not(:first-child) {
+          display: none;
+        }
+        nav ul a {
+          float: none;
+        }
+      }
+
+      nav ul a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      nav ul a.active {
+        background-color: #717171;
+        color: white;
+      }
+
+      .icon {
+        display: none;
+      }
+      @media screen and (max-width: 600px) {
+        .icon {
+          right: 10;
+          display: block;
+        }
+      }
+
+      .logo {
+        font-size: 35px;
+        transition: 0.4s;
+      }
+      @media only screen and (max-width: 600px) {
+        .logo {
+          font-size: 25px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .navbar.responsive {
+          position: relative;
+          padding: 20px 10px;
+        }
+        .navbar.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 20px;
+        }
+        .navbar.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .content.responsive {
+          margin-top: 0px;
+        }
+      }
+
+      /*footer*/
+
+      .footer {
+        padding: 16px;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        list-style-type: none;
+        position: absolute;
+        bottom: 0px;
+      }
+
+      .footer li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /*section*/
+
+      .section {
+        display: table;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .section {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .left {
+        width: 30%;
+        padding: 20px;
+        text-align: center;
+        vertical-align: top;
+        display: table-cell;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .left {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+
+      .right {
+        width: 70%;
+        padding: 20px;
+        border-left: 4px solid grey;
+        vertical-align: top;
+        display: table-cell;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .right {
+          width: 100%;
+          display: inline-block;
+          border-left: none;
+          border-top: 4px solid grey;
+        }
+      }
+
+      /*Content*/
+
+      .box {
+        border: none;
+        padding: 14px;
+        border-radius: 4px;
+        font-size: 16px;
+        display: inline-block;
+        background-color: #919191;
+        color: white;
+        width: 90%;
+      }
+
+      /*Tabelle*/
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      table tr th,
+      table tr td {
+        border-right: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        padding: 5px;
+        width: 50%;
+      }
+
+      table tr th:first-child,
+      table tr td:first-child {
+        border-left: 1px solid #bbb;
+      }
+
+      table tr th {
+        background: #eee;
+        border-top: 1px solid #bbb;
+        text-align: left;
+      }
+
+      table tr:first-child th:first-child {
+        border-top-left-radius: 6px;
+      }
+
+      table tr:first-child th:last-child {
+        border-top-right-radius: 6px;
+      }
+
+      table tr:last-child td:first-child {
+        border-bottom-left-radius: 6px;
+      }
+
+      table tr:last-child td:last-child {
+        border-bottom-right-radius: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--navbar-->
+
+    <nav>
+      <ul id="navbar" class="navbar">
+        <li>
+          <a href="#default" class="logo" id="logo">G&auml;stezimmer Viens</a>
+        </li>
+        <li><a href="./index.html" id="a">Startseite</a></li>
+        <li><a href="./rooms.html" id="a">Zimmer</a></li>
+        <li><a href="./prices.html" id="a">Preise</a></li>
+        <li><a class="active" href="./location.html" id="a">Lage</a></li>
+        <li><a href="./gallery.html" id="a">Galerie</a></li>
+        <li><a href="./contact.html" id="a">Kontakt</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()"
+            ><img src="./assets/img/icon-menu.png" alt="menu"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--content-->
+
+    <div class="wrapper">
+      <div class="content" id="content">
+        <div class="section">
+          <div class="left">
+            <div class="box" style="margin-top: 10px">Zu Fu&szlig;</div>
+
+            <table>
+              <tr>
+                <th>Zum Bahnhof</th>
+                <td>900 m</td>
+              </tr>
+              <tr>
+                <th>Zur Innenstadt</th>
+                <td>600 m</td>
+              </tr>
+              <tr>
+                <th>Zum Mineralparkfreibad</th>
+                <td>900 m</td>
+              </tr>
+              <tr>
+                <th>Zum Parktplatz</th>
+                <td>ca. 1 Minuten</td>
+              </tr>
+            </table>
+
+            <br />
+
+            <div class="box" style="margin-top: 10px">Mit Fahrrad</div>
+
+            <table>
+              <tr>
+                <th>Zu den Radwegen (Enzatal und Neckartal)</th>
+                <td>ca. 2 Minuten</td>
+              </tr>
+            </table>
+
+            <br />
+
+            <div class="box" style="margin-top: 10px">Mit PKW</div>
+
+            <table>
+              <tr>
+                <th>Zur Autobahn</th>
+                <td>ca. 9,2 km</td>
+              </tr>
+            </table>
+
+            <br />
+
+            <div class="box" style="margin-top: 10px">Sonstiges</div>
+
+            <table>
+              <tr>
+                <th>Parkplatz</th>
+                <td>0 km</td>
+              </tr>
+              <tr>
+                <th>Hof (Raucherzone)</th>
+                <td>0 km</td>
+              </tr>
+              <tr>
+                <th>Platz f&uuml;r Fahrr&auml;der</th>
+                <td>0 km</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="right">
+            <div style="height: 600px; width: 100%">
+              <iframe
+                width="100%"
+                height="600"
+                src="https://maps.google.de/maps?hl=de&q=G%C3%A4stezimmer+Viens%20%20Karlstra%C3%9Fe+6%20Besigheim&t=&z=10&ie=utf8&iwloc=b&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                style="height: 600px; width: 100%"
+              ></iframe>
+              <p
+                style="
+                  text-align: right;
+                  margin: 0px;
+                  padding-top: -10px;
+                  line-height: 10px;
+                  font-size: 10px;
+                  margin-top: -25px;
+                "
+              >
+                <a
+                  href="http://www.checkpoll.de/google-maps-generator/"
+                  style="font-size: 10px"
+                  target="_blank"
+                  >Google Maps Generator</a
+                >
+                von
+                <a
+                  href="https://www.on-projects.de/"
+                  style="font-size: 10px"
+                  title="Webdesign in Stuttgart"
+                  target="_blank"
+                  >on-projects</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--footer-->
+
+      <div class="footer">
+        <ul>
+          <li><a href="./impress.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--navbar-->
+
+    <script>
+      const mq = window.matchMedia("(min-width: 600px)");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (mq.matches) {
+          if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+          ) {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.padding = "40px 10px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        } else {
+          document.getElementById("navbar").style.padding = "20px 10px";
+          document.getElementById("logo").style.fontSize = "25px";
+        }
+      }
+
+      if (matchMedia) {
+        const mq = window.matchMedia("(min-width: 600px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+      }
+    </script>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("navbar"),
+          v = document.getElementById("content");
+        if (x.className === "navbar") {
+          x.className += " responsive";
+          v.className += " responsive";
+        } else {
+          x.className = "navbar";
+          v.className = "content";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<html>
+  <head>
+    <title>G&auml;stezimmer Viens Kontakt</title>
+    <meta
+      name="keywords"
+      content="Besigheim, G&auml;stezimmer, Ferienwohnung, Monzeurzimmer, Stuttgart, Ludwigsburg, Heilbronn, Unterkunft"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /*body*/
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .content {
+        margin-top: 130px;
+        padding-bottom: 20px;
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          margin-top: 50px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .content {
+          padding: 20px 16px;
+        }
+      }
+
+      .wrapper {
+        position: relative;
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+      }
+
+      /*navbar*/
+
+      nav ul {
+        overflow: hidden;
+        background-color: #333;
+        padding: 40px 10px;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        list-style-type: none;
+        left: 0;
+        margin: 0;
+        transition: 0.4s;
+        z-index: 99;
+      }
+      @media screen and (max-width: 600px) {
+        nav ul {
+          padding: 20px 10px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        nav ul {
+          padding: 20px 10px;
+        }
+      }
+
+      nav ul a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 20px;
+        border-radius: 4px;
+        color: #f2f2f2;
+      }
+      @media screen and (max-width: 600px) {
+        nav a:not(:first-child) {
+          display: none;
+        }
+        nav ul a {
+          float: none;
+        }
+      }
+
+      nav ul a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      nav ul a.active {
+        background-color: #717171;
+        color: white;
+      }
+
+      .icon {
+        display: none;
+      }
+      @media screen and (max-width: 600px) {
+        .icon {
+          right: 10;
+          display: block;
+        }
+      }
+
+      .logo {
+        font-size: 35px;
+        transition: 0.4s;
+      }
+      @media only screen and (max-width: 600px) {
+        .logo {
+          font-size: 25px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .navbar.responsive {
+          position: relative;
+          padding: 20px 10px;
+        }
+        .navbar.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 20px;
+        }
+        .navbar.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .content.responsive {
+          margin-top: 0px;
+        }
+      }
+
+      /*footer*/
+
+      .footer {
+        padding: 16px;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        list-style-type: none;
+        position: absolute;
+        bottom: 0px;
+      }
+
+      .footer li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /*section*/
+
+      .section {
+        display: table;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .section {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .left {
+        width: 30%;
+        padding: 20px;
+        vertical-align: top;
+        display: table-cell;
+      }
+      @media screen and (max-width: 1000px) {
+        .left {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+
+      .right {
+        width: 70%;
+        padding: 20px;
+        border-left: 4px solid grey;
+        vertical-align: top;
+        display: table-cell;
+        min-height: 100%;
+      }
+      @media screen and (max-width: 1000px) {
+        .right {
+          width: 100%;
+          display: inline-block;
+          border-left: none;
+          border-top: 4px solid grey;
+        }
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        border-radius: 4px;
+        padding: 12px;
+        background-color: #eee;
+        border: 1px solid #eee;
+        resize: vertical;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--navbar-->
+
+    <nav>
+      <ul id="navbar" class="navbar">
+        <li>
+          <a href="#default" class="logo" id="logo">G&auml;stezimmer Viens</a>
+        </li>
+        <li><a href="./index.html" id="a">Startseite</a></li>
+        <li><a href="./rooms.html" id="a">Zimmer</a></li>
+        <li><a href="./prices.html" id="a">Preise</a></li>
+        <li><a href="./location.html" id="a">Lage</a></li>
+        <li><a href="./gallery.html" id="a">Galerie</a></li>
+        <li><a class="active" href="./contact.html" id="a">Kontakt</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()"
+            ><img src="./assets/img/icon-menu.png" alt="menu"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--content-->
+
+    <div class="wrapper">
+      <div class="content" id="content">
+        <div class="section">
+          <div class="left">
+            <h2>Kontakt</h2>
+            Manh Vien Duong
+            <br />
+            Karlstr.6
+            <br />
+            74354 Besigheim
+            <br />
+            <br />
+            Tel: <a href="tel:07143408685">07143/408685</a>
+            <br />
+            Mobil: <a href="tel:01578 0432795">01578 0432795</a>
+            <br />
+            E-Mail:
+            <a href="mailto:manhvien@freenet.de"> manhvien@freenet.de</a>
+          </div>
+
+          <div class="right">
+            <h2>Senden Sie uns eine Nachricht</h2>
+
+            <form
+              action="https://formspree.io/manhvien@freenet.de"
+              method="POST"
+            >
+              <label for="Vorname">Vorname</label>
+              <input type="text" id="Vorname" name="Vorname" />
+              <label for="Nachname">Nachname</label>
+              <input type="text" id="Nachname" name="Nachname" />
+
+              <label for="E-Mail">E-Mail</label>
+              <input type="text" id="E-Mail" name="E-Mail" />
+
+              <label for="Nachricht">Nachricht</label>
+              <textarea
+                id="Nachricht"
+                name="Nachricht"
+                style="height: 200px"
+              ></textarea>
+              <input type="submit" value="Senden" onClick="return empty()" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!--footer-->
+
+      <div class="footer">
+        <ul>
+          <li><a href="impress.html">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--navbar-->
+
+    <script>
+      const mq = window.matchMedia("(min-width: 600px)");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (mq.matches) {
+          if (
+            document.body.scrollTop > 80 ||
+            document.documentElement.scrollTop > 80
+          ) {
+            document.getElementById("navbar").style.padding = "20px 10px";
+            document.getElementById("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.padding = "40px 10px";
+            document.getElementById("logo").style.fontSize = "35px";
+          }
+        } else {
+          document.getElementById("navbar").style.padding = "20px 10px";
+          document.getElementById("logo").style.fontSize = "25px";
+        }
+      }
+
+      if (matchMedia) {
+        const mq = window.matchMedia("(min-width: 600px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+      }
+    </script>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("navbar"),
+          v = document.getElementById("content");
+        if (x.className === "navbar") {
+          x.className += " responsive";
+          v.className += " responsive";
+        } else {
+          x.className = "navbar";
+          v.className = "content";
+        }
+      }
+    </script>
+
+    <!--contact-->
+
+    <script>
+      function empty() {
+        var v, n, e, t;
+        v = document.getElementById("Vorname").value;
+        n = document.getElementById("Nachname").value;
+        e = document.getElementById("E-Mail").value;
+        t = document.getElementById("Nachricht").value;
+
+        if (v == "" || n == "" || e == "" || t == "") {
+          alert("FÃ¼llen Sie die leeren Textfelder aus.");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Triggers on version tags like v1.0.0, v2.1.3
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  # 1. NEW SETUP JOB: Calculates variables once to follow DRY principles
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      image_name: ${{ steps.set_vars.outputs.image_name }}
+    steps:
+      - name: Calculate lowercase image name
+        id: set_vars
+        run: echo "image_name=${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+
+  build-and-push:
+    needs: setup
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          # Use the variable from the setup job
+          images: ${{ env.REGISTRY }}/${{ needs.setup.outputs.image_name }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest,enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  create-release:
+    needs: [setup, build-and-push]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Package Website Source
+        run: |
+          # Use official GitHub Actions temporary directory
+          TEMP_DIR="${{ runner.temp }}/site-dist"
+          mkdir -p "$TEMP_DIR"
+          
+          # explicitly exclude .git as a failsafe, alongside .dockerignore and nginx directory
+          rsync -a --exclude-from='.dockerignore' --exclude='.git' --exclude='nginx' ./ "$TEMP_DIR/"
+          
+          # Zip the contents from the temp dir, saving the zip back to the workspace
+          (cd "$TEMP_DIR" && zip -r "${{ github.workspace }}/website-source.zip" .)
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: website-source.zip
+          generate_release_notes: true
+          body: |
+            ### Docker Image
+            ```bash
+            docker run -d -p 8080:8080 ${{ env.REGISTRY }}/${{ needs.setup.outputs.image_name }}:${{ github.ref_name }}
+            ```
